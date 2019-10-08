@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> || Tip Cacculater||</title>
+    <style>
+        *{
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+
+        main{
+            height: 100vh;
+            background-image: linear-gradient(to right top, #051937,
+            #004d7a, #008793, #00bf72, #a8eb12);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div{
+            max-width: 800px; height: auto;
+            background-color: #004d7a;
+            padding: 50px;
+            box-shadow: 1px 1px 15px 3px #2d3436;
+        }
+
+        h1{
+            margin-bottom: 10px;
+            text-shadow: 1px 2px 1px white;
+            text-transform: capitalize;
+        }
+
+        input{
+            width: 400px;
+            padding: 10px 0;
+        }
+
+        button{
+
+        }
+
+        label{
+            display: block;
+            text-transform: capitalize;
+            /* margin-top: 10px; */
+        }
+    </style>
+</head>
+<body>
+    <main>
+
+
+            <h1>Tip calculater</h1>
+        <div>
+
+            
+            <label for="">Bill Amount</label>
+            <input type="text" name="" id="bill_amount">
+            <br>
+            <label for="">Tip %</label>
+            <input type="text" name="" id="tip_per">
+            <br>
+            <label for="">Tip Amount</label>
+            <input type="text" name="" id="tip_amount" disabled>
+            <br>
+            <label for="">Total Amount</label>
+            <input type="text" name="" id="total_b" disabled>
+            <br>
+            <button onclick="calculate()">Final bill</button>
+
+        </div>
+    </main>
+        <script>
+            const calculate = () => {
+                let amount = document.getElementById("bill_amount").value;
+                // alert(amount);
+                let percent = document.getElementById("tip_per").value;
+
+                 let tip_percentage_find = amount  *(percent/100);
+                //   alert(tip_percentage_find);
+
+                 let total = tip_percentage_find + Number(amount);
+                //  alert(total);
+
+                 document.getElementById("tip_amount").value = tip_percentage_find;
+
+                 document.getElementById("total_b").value =total;
+            }
+        </script>
+</body>
+</html>
